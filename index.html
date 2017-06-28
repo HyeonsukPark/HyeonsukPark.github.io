@@ -76,10 +76,9 @@ footer span { float: right; font-style: italic; }
 }
 </style>
     
-    <link href="css/print.css" rel="stylesheet" media="print">
-    
-    <script async src="http://www.google-analytics.com/analytics.js"></script>
-    <script async src="js/perfmatters.js"></script>
+<link href="css/print.css" rel="stylesheet" media="print">
+<script async src="http://www.google-analytics.com/analytics.js"></script>
+
     
     
     <title>Cameron Pittman: Portfolio</title>
@@ -139,7 +138,18 @@ footer span { float: right; font-style: italic; }
       // Optional TODO: replace with your Google Analytics profile ID.
       ga('create', 'UA-XXXX-Y');
       ga('send', 'pageview');
-    </script>
+    
+   function logCRP() {
+  var t = window.performance.timing,
+    dcl = t.domContentLoadedEventStart - t.domLoading,
+    complete = t.domComplete - t.domLoading;
+  var stats = document.getElementById("crp-stats");
+  stats.textContent = 'DCL: ' + dcl + 'ms, onload: ' + complete + 'ms';
+}
 
+window.addEventListener("load", function(event) {
+  logCRP();
+});
+    </script>
   </body>
 </html>
