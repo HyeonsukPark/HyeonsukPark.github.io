@@ -564,11 +564,12 @@ document.addEventListener('DOMContentLoaded', function() {
     var i = 0;
     var elem;
     var movingPizza = document.getElementById("movingPizzas1");
-
+    
+    /* calculate the number of required pizzas. */ 
     var w = window.innerWidth;
     var h = window.innerHeight;
-    var pizzaWidth = Math.ceil(window.innerWidth / s);
-    var numberOfRows = Math.ceil(window.innerHeight / s);
+    var pizzaWidth = Math.ceil(w / s);
+    var numberOfRows = Math.ceil(h / s);
     var numberOfPizzas = Math.ceil(numberOfRows * cols);
     console.log(numberOfPizzas);
     /* I calculated the numberOfPizzas. it says 32. */ 
